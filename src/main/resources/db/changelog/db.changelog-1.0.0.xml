@@ -1,0 +1,48 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet author="Kishank (generated)" id="1503460396396-1">
+        <createTable tableName="city">
+            <column autoIncrement="true" name="city_id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="city_name" type="VARCHAR(255)"/>
+
+            <column name="create_date" type="date" defaultValue="now()">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="update_date" type="date">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="degree" type="INT"></column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1503460396396-4" author="Kishank (generated)">
+        <insert tableName="city">
+            <column name="city_name" value="Baku"></column>
+            <column name="degree" value="20"></column>
+        </insert>
+        <insert tableName="city">
+            <column name="city_name" value="Moscow"></column>
+            <column name="degree" value="30"></column>
+        </insert>
+        <insert tableName="city">
+            <column name="city_name" value="Tbilisi"></column>
+            <column name="degree" value="15"></column>
+        </insert>
+        <insert tableName="city">
+            <column name="city_name" value="New York"></column>
+            <column name="degree" value="12"></column>
+        </insert>
+        <insert tableName="city">
+            <column name="city_name" value="California"></column>
+            <column name="degree" value="10"></column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
